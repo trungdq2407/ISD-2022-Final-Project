@@ -63,8 +63,8 @@
                                     
                                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                         $user_id = $_SESSION['user_id'];
-                                        $use = mysqli_query($con_db, "USE `manage_account`");
-                                        $select = mysqli_query($con_db, "SELECT * FROM `user_information` WHERE id = '$user_id'") or die('query failed');
+                                        $use = mysqli_query($con, "USE `manage_account`");
+                                        $select = mysqli_query($con, "SELECT * FROM `user_information` WHERE id = '$user_id'") or die('query failed');
                                         if (mysqli_num_rows($select) > 0) {
                                             $fetch = mysqli_fetch_assoc($select);
                                         }

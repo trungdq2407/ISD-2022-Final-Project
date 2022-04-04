@@ -5,15 +5,15 @@ session_start();
 
 // Kiem tra gia tri --> boolean
 if (isset($_POST['submit'])) {
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $password = mysqli_real_escape_string($con, md5($_POST['password'])); // mã hóa password
+    $email = mysqli_real_escape_string($con_db, $_POST['email']);
+    $password = mysqli_real_escape_string($con_db, md5($_POST['password'])); // mã hóa password
     
 
 
     // Truy vấn database
-    $use = mysqli_query($con, "USE `manage_account`");
+    $use = mysqli_query($con_db, "USE `manage_account`");
 
-    $select = mysqli_query($con, "SELECT * FROM `user_information` WHERE email = '$email' AND password = '$password'") or die('query failed');
+    $select = mysqli_query($con_db, "SELECT * FROM `user_information` WHERE email = '$email' AND password = '$password'") or die('query failed');
 
 
     if (mysqli_num_rows($select) > 0) {

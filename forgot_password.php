@@ -4,17 +4,17 @@ include 'config.php';
 session_start();
 
 if (isset($_POST["submit_email"])) {
-    $use = mysqli_query($con, "USE `manage_account`");
+    $use = mysqli_query($con_db_db, "USE `manage_account`");
 
-    $email = mysqli_real_escape_string($con, $_POST["email"]);
-    $check_email = mysqli_query($con, "SELECT * FROM `user_information` WHERE email='$email'") or die('query failed');
+    $email = mysqli_real_escape_string($con_db, $_POST["email"]);
+    $check_email = mysqli_query($con_db, "SELECT * FROM `user_information` WHERE email='$email'") or die('query failed');
 
 
     if (mysqli_num_rows($check_email) > 0) {
         $data = mysqli_fetch_assoc($check_email);
         $password = rand(999, 99999);
         $password_hash = md5($password);
-        $update_password = mysqli_query($con, "UPDATE `user_information` SET password='$password_hash' WHERE email='$email'") or die('query failed');
+        $update_password = mysqli_query($con_db, "UPDATE `user_information` SET password='$password_hash' WHERE email='$email'") or die('query failed');
         
         $to = $email;
         $subject = "Đặt lại mật khẩu";

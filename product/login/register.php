@@ -4,16 +4,16 @@ include 'config.php';
 
 // Kiem tra gia tri --> boolean
 if (isset($_POST['submit'])) {
-    $name = mysqli_real_escape_string($con_db, $_POST['name']);
-    $email = mysqli_real_escape_string($con_db, $_POST['email']);
-    $phone = mysqli_real_escape_string($con_db, $_POST['phone']);
-    $password = mysqli_real_escape_string($con_db, $_POST['password']); 
-    $confirm_password = mysqli_real_escape_string($con_db, $_POST['confirm_password']);
+    $name = mysqli_real_escape_string($con, $_POST['name']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $phone = mysqli_real_escape_string($con, $_POST['phone']);
+    $password = mysqli_real_escape_string($con, $_POST['password']); 
+    $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']);
 
     // Truy vấn database
-    $use = mysqli_query($con_db, "USE `manage_account`");
+    $use = mysqli_query($con, "USE `manage_account`");
 
-    $select = mysqli_query($con_db, "SELECT * FROM `user_information` WHERE email = '$email' AND phone = '$phone'") or die('query failed');
+    $select = mysqli_query($con, "SELECT * FROM `user_information` WHERE email = '$email' AND phone = '$phone'") or die('query failed');
 
     
     // $number = preg_match('@[0-9]@', $password);
@@ -34,8 +34,8 @@ if (isset($_POST['submit'])) {
         } else if(!$specialChars) {
             $message[] = "Sai định dạng mật khẩu";
         } else {
-            $crypt_password = mysqli_real_escape_string($con_db, md5($_POST['password'])); 
-            $insert = mysqli_query($con_db, "INSERT INTO `user_information`(name, email, phone, password) VALUES ('$name', '$email', '$phone', '$crypt_password')") or die('query failed');
+            $crypt_password = mysqli_real_escape_string($con, md5($_POST['password'])); 
+            $insert = mysqli_query($con, "INSERT INTO `user_information`(name, email, phone, password) VALUES ('$name', '$email', '$phone', '$crypt_password')") or die('query failed');
             header('location:login.php');
         }
 }

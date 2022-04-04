@@ -1,44 +1,30 @@
 <?php
 
 include 'config.php';
+session_start();
 
 // Kiem tra gia tri --> boolean
 if (isset($_POST['submit'])) {
-    $name = mysqli_real_escape_string($con_db, $_POST['name']);
-    $email = mysqli_real_escape_string($con_db, $_POST['email']);
-    $phone = mysqli_real_escape_string($con_db, $_POST['phone']);
-    $password = mysqli_real_escape_string($con_db, $_POST['password']); 
-    $confirm_password = mysqli_real_escape_string($con_db, $_POST['confirm_password']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, md5($_POST['password'])); // mã hóa password
+    
+
 
     // Truy vấn database
-    $use = mysqli_query($con_db, "USE `manage_account`");
+    $use = mysqli_query($con, "USE `manage_account`");
 
-    $select = mysqli_query($con_db, "SELECT * FROM `user_information` WHERE email = '$email' AND phone = '$phone'") or die('query failed');
+    $select = mysqli_query($con, "SELECT * FROM `user_information` WHERE email = '$email' AND password = '$password'") or die('query failed');
 
-    
-    // $number = preg_match('@[0-9]@', $password);
-    // $uppercase = preg_match('@[A-Z]@', $password);
-    // $lowercase = preg_match('@[a-z]@', $password);
-    // !$number || !$uppercase || !$lowercase || !$specialChars || 
-    $specialChars = preg_match('@[^\w]@', $password);
-        
-    if (mysqli_num_rows($select) > 0){ 
-        $message[] = "Email và số điện thoại đã tồn tại";
+
+    if (mysqli_num_rows($select) > 0) {
+        $row = mysqli_fetch_assoc($select);
+        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['loggedin'] = true;
+
+        header("location: index.php");
     } else {
-        if ($password != $confirm_password) {
-        $message[] = "Mật khẩu nhập lại không chính xác";
-        } else if(strlen($password) < 8 || strlen($password) > 16) {
-            $message[] = "Sai định dạng mật khẩu";
-        } else if(strlen($phone) < 10 || strlen($phone) > 10) {
-            $message[] = "Sai định dạng số điện thoại";
-        } else if(!$specialChars) {
-            $message[] = "Sai định dạng mật khẩu";
-        } else {
-            $crypt_password = mysqli_real_escape_string($con_db, md5($_POST['password'])); 
-            $insert = mysqli_query($con_db, "INSERT INTO `user_information`(name, email, phone, password) VALUES ('$name', '$email', '$phone', '$crypt_password')") or die('query failed');
-            header('location:login.php');
-        }
-}
+        $message[] = "Tài khoản hoặc Mật khẩu không chính xác";
+    }
 
 }
 
@@ -48,7 +34,7 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" href="CSS/main.css" rel="stylesheet" />
@@ -58,7 +44,7 @@ if (isset($_POST['submit'])) {
     <script src="JS/jquery-3.5.1.min.js"></script>
     <script src="JS/multislider.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <title>Đăng ký</title>
+    <title>Đăng nhập</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -89,12 +75,7 @@ if (isset($_POST['submit'])) {
             <div>
                 <!--My account part-->
                 <div class="account">
-                    <a href="index.html">
-                        <!-- <button class="account-btn">
-                            <i class="fas fa-user-alt"></i>
-                        </button> -->
-                        <span class="account-text"><a href="./login.php" class="account-text-log">Đăng nhập</a></span>
-                    </a>
+                    
                     <!--When we click the btnShowAccountInfo this section will be displayed-->
                 </div>
                 <!--Shopping cart-->
@@ -160,8 +141,8 @@ if (isset($_POST['submit'])) {
     </nav>
 
     <div class="form-container">
-        <form action="" method="post" enctype="multipart/form-data" class="form" id="form-1">
-            <h1>Đăng ký</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            <h1>Đăng nhập</h1>
             <?php
                 if (isset($message)) {
                     foreach ($message as $message) {
@@ -171,14 +152,11 @@ if (isset($_POST['submit'])) {
                     }
                 }
             ?>
-            <input type="text" placeholder="Tên" name="name" required class="box">
-            <input type="email" placeholder="Email" name="email" required class="box" id="email">
-            <input type="number" placeholder="Số điện thoại" name="phone" required class="box" id="password">
-            <input type="password" placeholder="Mật khẩu (Tối thiểu 8 kí tự và ít nhất 1 kí tự đặc biệt)" name="password" required class="box">
-            <input type="password" placeholder= "Nhập lại mật khẩu" name="confirm_password" required class="box">
-            <!-- <input type="file" name="image" class="box" accept="image/jpg, image/png"> -->
-            <input type="submit" value="Đăng ký" name="submit" class="btn">
-            <p>Bạn đã có tài khoản? <a href="login.php">Đăng nhập</a></p>
+            <input type="email" placeholder="Email" name="email" required class="box">
+            <input type="password" placeholder="Mật khẩu" name="password" required class="box">
+            <input type="submit" value="Đăng nhập" name="submit" class="btn">
+            <p>Bạn chưa có tài khoản? <a href="register.php">Đăng ký ngay</a></p>
+            <p> <a href="forgot_password.php" class="forgot-password">Quên mật khẩu?<a></p>
         </form>
     </div>
     
