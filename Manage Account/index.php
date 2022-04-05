@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link type="text/css" href="style.css" rel="stylesheet" />
-    <link type="text/css" href="CSS/main.css" rel="stylesheet" />
+    <link type="text/css" href="../CSS/style.css" rel="stylesheet" />
+    <link type="text/css" href="../CSS/main.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
-    <script src="JS/jquery-3.5.1.min.js"></script>
-    <script src="JS/multislider.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Vua Táo - Điện thoại, phụ kiện chính hãng</title>
 </head>
@@ -38,7 +36,7 @@
                 <!--Logo-->
 
                 <a href="index.php" id="logo">
-                    <img src="Images/Other/apple.png" alt="">
+                    <img src="../Images/Other/apple.png" alt="">
 
                 </a>
 
@@ -178,19 +176,19 @@
     <header id="hearderSlide">
         <div class="MS-content">
             <a href="detail_page.html" class="item">
-                <img src="Images/Other/slide1.jpg" />
+                <img src="../Images/Other/slide1.jpg" />
             </a>
             <a href="detail_page.html" class="item">
-                <img src="Images/Other/slide2.jpg" />
+                <img src="../Images/Other/slide2.jpg" />
             </a>
             <a href="detail_page.html" class="item">
-                <img src="Images/Other/slide3.jpg" />
+                <img src="../Images/Other/slide3.jpg" />
             </a>
             <a href="detail_page.html" class="item">
-                <img src="Images/Other/slide4.jpg" />
+                <img src="../Images/Other/slide4.jpg" />
             </a>
             <a href="detail_page.html" class="item">
-                <img src="Images/Other/slide5.jpg" />
+                <img src="../Images/Other/slide5.jpg" />
             </a>
         </div>
         <div class="MS-controls">
@@ -250,7 +248,7 @@
                     <div class="product">
                         <div class="product-under">
                             <figure class="product-image">
-                                <img src="Images/producs-images/Phones/ip13.png" class="img-product" />
+                                <img src="../Images/producs-images/Phones/ip13.png" class="img-product" />
                                 <div class="product-over">
                                     <button class="btn btn-small addToCart" data-product-id="1">
                                         <i class="fas fa-cart-plus"></i>Thêm vào giỏ hàng
@@ -271,7 +269,7 @@
                     <div class="product">
                         <div class="product-under">
                             <figure class="product-image">
-                                <img src="Images/producs-images/Phones/iphone-12-pro-max.png" class="img-product" />
+                                <img src="../Images/producs-images/Phones/iphone-12-pro-max.png" class="img-product" />
                                 <div class="product-over">
                                     <button class="btn btn-small addToCart" data-product-id="2">
                                         <i class="fas fa-cart-plus"></i>Thêm vào giỏ hàng
@@ -291,7 +289,7 @@
                     <div class="product">
                         <div class="product-under">
                             <figure class="product-image">
-                                <img src="Images/producs-images/Phones/ip13promax.png" class="img-product" />
+                                <img src="../Images/producs-images/Phones/ip13promax.png" class="img-product" />
                                 <div class="product-over">
                                     <button class="btn btn-small addToCart" data-product-id="3">
                                         <i class="fas fa-cart-plus"></i>Thêm vào giỏ hàng
@@ -312,7 +310,7 @@
                     <div class="product">
                         <div class="product-under">
                             <figure class="product-image">
-                                <img src="Images/producs-images/Phones/Samsung Galaxy Z.png" class="img-product" />
+                                <img src="../Images/producs-images/Phones/Samsung Galaxy Z.png" class="img-product" />
                                 <div class="product-over">
                                     <button class="btn btn-small addToCart" data-product-id="4">
                                         <i class="fas fa-cart-plus"></i>Thêm vào giỏ hàng
@@ -337,7 +335,7 @@
             <div class="pop-mobiles">
                 <div class="pop-mobiles-1">
                     <figure>
-                        <img src="Images/producs-images/Mobiles/new_phone2.png" />
+                        <img src="../Images/producs-images/Mobiles/new_phone2.png" />
                     </figure>
                     <div>
                         <h2>REALME 9 PRO</h2>
@@ -361,7 +359,7 @@
                         <li class="product">
                             <div class="product-under">
                                 <figure class="product-image">
-                                    <img src="Images/producs-images/Mobiles/galaxynote10.png" class="img-product" />
+                                    <img src="../Images/producs-images/Mobiles/galaxynote10.png" class="img-product" />
                                     <div class="product-over">
                                         <button class="btn btn-small addToCart" data-product-id="5">
                                             <i class="fas fa-cart-plus"></i>Thêm vào giỏ hàng
@@ -381,7 +379,8 @@
                         <li class="product">
                             <div class="product-under">
                                 <figure class="product-image">
-                                    <img src="Images/producs-images/Mobiles/OPPO Reno6 Z 5G.png" class="img-product" />
+                                    <img src="../Images/producs-images/Mobiles/OPPO Reno6 Z 5G.png"
+                                        class="img-product" />
                                     <div class="product-over">
                                         <button class="btn btn-small addToCart" data-product-id="6">
                                             <i class="fas fa-cart-plus"></i>Thêm vào giỏ hàng
@@ -401,7 +400,7 @@
                         <li class="product">
                             <div class="product-under">
                                 <figure class="product-image">
-                                    <img src="Images/producs-images/Mobiles/Xiaomi Redmi Note 11.png"
+                                    <img src="../Images/producs-images/Mobiles/Xiaomi Redmi Note 11.png"
                                         class="img-product" />
                                     <div class="product-over">
                                         <button class="btn btn-small addToCart" data-product-id="7">
@@ -422,7 +421,7 @@
                         <li class="product">
                             <div class="product-under">
                                 <figure class="product-image">
-                                    <img src="Images/producs-images/Mobiles/Realme 9i.png" class="img-product" />
+                                    <img src="../Images/producs-images/Mobiles/Realme 9i.png" class="img-product" />
                                     <div class="product-over">
                                         <button class="btn btn-small addToCart" data-product-id="8">
                                             <i class="fas fa-cart-plus"></i>Thêm vào giỏ hàng
@@ -442,7 +441,7 @@
                         <li class="product">
                             <div class="product-under">
                                 <figure class="product-image">
-                                    <img src="Images/producs-images/Mobiles/Samsung Galaxy Note 20 Ultra 5G.png"
+                                    <img src="../Images/producs-images/Mobiles/Samsung Galaxy Note 20 Ultra 5G.png"
                                         class="img-product" />
                                     <div class="product-over">
                                         <button class="btn btn-small addToCart" data-product-id="9">
@@ -463,7 +462,7 @@
                         <li class="product">
                             <div class="product-under">
                                 <figure class="product-image">
-                                    <img src="Images/producs-images/Mobiles/Nokia G10.png" class="img-product" />
+                                    <img src="../Images/producs-images/Mobiles/Nokia G10.png" class="img-product" />
                                     <div class="product-over">
                                         <button class="btn btn-small addToCart" data-product-id="10">
                                             <i class="fas fa-cart-plus"></i>Thêm vào giỏ hàng
@@ -540,7 +539,11 @@
             </li>
         </ul>
     </footer>
-    <script src="JS/script.js"></script>
+
+    <script src="../JS/jquery-3.5.1.min.js"></script>
+    <script src="../JS/multislider.min.js"></script>
+    <script src="../JS/script.js"></script>
+
 </body>
 
 </html>

@@ -41,12 +41,11 @@ include 'header.php';
     border: 0;
     cursor: pointer;
 }
-
 </style>
-    <div class="main-content">
-        <h1>Thêm sản phẩm</h1>
-        <div id="content-box">
-            <?php
+<div class="main-content">
+    <h1>Thêm sản phẩm</h1>
+    <div id="content-box">
+        <?php
             if (isset($_GET['action']) && $_GET['action'] == 'add') {
                 if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['price']) && !empty($_POST['price'])) {
                     $galleryImages = array();
@@ -78,50 +77,49 @@ include 'header.php';
                     $error = "Bạn chưa nhập thông tin sản phẩm.";
                 }
                 ?>
-                <div class = "container">
-                    <div class = "error"><?= isset($error) ? $error : "Cập nhật thành công" ?></div>
-                    <a href = "product_listing.php">Quay lại danh sách sản phẩm</a>
-                </div>
-            <?php } else { ?>
-                <form id="product-form" method="POST" action="?action=add"  enctype="multipart/form-data">
-                    <input type="submit" title="Lưu sản phẩm" value="" />
-                    <div class="clear-both"></div>
-                    <div class="wrap-field">
-                        <label>Tên sản phẩm: </label>
-                        <input type="varchar" name="name" value="" />
-                        <div class="clear-both"></div>
-                    </div>
-                    <div class="wrap-field">
-                        <label>Giá sản phẩm: </label>
-                        <input type="float" name="price" value="" />
-                        <div class="clear-both"></div>
-                    </div>
-                    <div class="wrap-field">
-                        <label>Số lượng sản phẩm: </label>
-                        <input type="int" name="number" value="" />
-                        <div class="clear-both"></div>
-                    </div>
-                    <div class="wrap-field">
-                        <label>Hãng: </label>
-                        <input type="varchar" name="brand" value="" />
-                        <div class="clear-both"></div>
-                    </div>
-                    <div class="wrap-field">
-                        <label>Ảnh đại diện: </label>
-                        <div class="right-wrap-field">
-                            <input type="file" name="image" />
-                        </div>
-                        <div class="clear-both"></div>
-                    </div>
-                    <div class="wrap-field">
-                        <label>Nội dung: </label>
-                        <textarea name="description" id="product-content"></textarea>
-                        <div class="clear-both"></div>
-                    </div>
-                </form>
-                <div class="clear-both"></div>
-            <?php } ?>
+        <div class="container">
+            <div class="error"><?= isset($error) ? $error : "Cập nhật thành công" ?></div>
+            <a href="product_listing.php">Quay lại danh sách sản phẩm</a>
         </div>
+        <?php } else { ?>
+        <form id="product-form" method="POST" action="?action=add" enctype="multipart/form-data">
+            <input type="submit" title="Lưu sản phẩm" value="" />
+            <div class="clear-both"></div>
+            <div class="wrap-field">
+                <label>Tên sản phẩm: </label>
+                <input type="varchar" name="name" value="" />
+                <div class="clear-both"></div>
+            </div>
+            <div class="wrap-field">
+                <label>Giá sản phẩm: </label>
+                <input type="float" name="price" value="" />
+                <div class="clear-both"></div>
+            </div>
+            <div class="wrap-field">
+                <label>Số lượng sản phẩm: </label>
+                <input type="int" name="number" value="" />
+                <div class="clear-both"></div>
+            </div>
+            <div class="wrap-field">
+                <label>Hãng: </label>
+                <input type="varchar" name="brand" value="" />
+                <div class="clear-both"></div>
+            </div>
+            <div class="wrap-field">
+                <label>Ảnh đại diện: </label>
+                <div class="right-wrap-field">
+                    <input type="file" name="image" />
+                </div>
+                <div class="clear-both"></div>
+            </div>
+            <div class="wrap-field">
+                <label>Nội dung: </label>
+                <textarea name="description" id="product-content"></textarea>
+                <div class="clear-both"></div>
+            </div>
+        </form>
+        <div class="clear-both"></div>
+        <?php } ?>
     </div>
+</div>
 <?php } ?>
-
