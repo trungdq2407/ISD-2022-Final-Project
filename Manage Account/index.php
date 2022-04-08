@@ -213,22 +213,11 @@
                     <span class="cart-quantity cart-header cart-column">Số Lượng</span>
                 </div>
                 <div class="cart-items">
-                    <div class="cart-row">
-                        <div class="cart-item cart-column">
-                            <img class="cart-item-image" src="Images/producs-images/Phones/Samsung Galaxy Z.png"
-                                width="100" height="100">
-                            <span class="cart-item-title">Samsung Galaxy Z Flip</span>
-                        </div>
-                        <span class="cart-price cart-column">27000000đ</span>
-                        <div class="cart-quantity cart-column">
-                            <input class="cart-quantity-input" type="number" value="1">
-                            <button class="btn-cart btn-danger" type="button">Xóa</button>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="cart-total">
                     <strong class="cart-total-title">Tổng Cộng:</strong>
-                    <span class="cart-total-price">27000000 đ</span>
+                    <span class="cart-total-price">0 đ</span>
                 </div>
             </div>
 
