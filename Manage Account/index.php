@@ -55,7 +55,7 @@
                             <span class="account-text">
                                 <?php 
                                     include 'config.php';
-                                    // session_start();
+                                    session_start();
 
                                     
                                     
