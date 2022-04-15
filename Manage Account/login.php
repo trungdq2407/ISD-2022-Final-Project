@@ -14,15 +14,22 @@ if (isset($_POST['submit'])) {
     $use = mysqli_query($con_db, "USE `manage_account`");
 
     $select = mysqli_query($con_db, "SELECT * FROM `user_information` WHERE email = '$email' AND password = '$password'") or die('query failed');
+    // $select2 = mysqli_query($con_db, "SELECT * FROM `user_information` WHERE email = 'vuatao@gmail.com' AND password = '$password'") or die('query failed');
 
+    // if(mysqli_num_rows($select2) > 0) {
+    //     $row = mysqli_fetch_assoc($select2);
+    //     $_SESSION['user_id'] = $row['id'];
+    //     $_SESSION['loggedin'] = true;
 
+    //     header("location: ../Product/admin/addProduct.php");
+    // } 
     if (mysqli_num_rows($select) > 0) {
         $row = mysqli_fetch_assoc($select);
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['loggedin'] = true;
 
         header("location: index.php");
-    } else {
+    }  else {
         $message[] = "Tài khoản hoặc Mật khẩu không chính xác";
     }
 
