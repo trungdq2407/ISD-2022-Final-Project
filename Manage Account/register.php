@@ -10,18 +10,12 @@ if (isset($_POST['submit'])) {
     $password = mysqli_real_escape_string($con_db, $_POST['password']); 
     $confirm_password = mysqli_real_escape_string($con_db, $_POST['confirm_password']);
 
-    // Truy vấn database
+    // Truy vấn database (user)
     $use = mysqli_query($con_db, "USE `manage_account`");
-
     $select = mysqli_query($con_db, "SELECT * FROM `user_information` WHERE email = '$email' AND phone = '$phone'") or die('query failed');
 
     
-    // $number = preg_match('@[0-9]@', $password);
-    // $uppercase = preg_match('@[A-Z]@', $password);
-    // $lowercase = preg_match('@[a-z]@', $password);
-    // !$number || !$uppercase || !$lowercase || !$specialChars || 
-    $specialChars = preg_match('@[^\w]@', $password);
-        
+    $specialChars = preg_match('@[^\w]@', $password);   
     if (mysqli_num_rows($select) > 0){ 
         $message[] = "Email và số điện thoại đã tồn tại";
     } else {
@@ -41,6 +35,7 @@ if (isset($_POST['submit'])) {
 }
 
 }
+
 
 
 ?>
