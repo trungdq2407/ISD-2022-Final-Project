@@ -16,8 +16,8 @@ window.onscroll = () =>{
    profile.classList.remove('active');
 }
 
-let mainImage = document.querySelector('.quick-view .box .row .image-container .main-image img');
-let subImages = document.querySelectorAll('.quick-view .box .row .image-container .sub-image img');
+let mainImage = document.querySelector('.update-product .image-container .main-image img');
+let subImages = document.querySelectorAll('.update-product .image-container .sub-image img');
 
 subImages.forEach(images =>{
    images.onclick = () =>{
