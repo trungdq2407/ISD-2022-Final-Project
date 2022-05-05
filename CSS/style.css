@@ -81,7 +81,20 @@ section{
    height: 25px;
    margin-top: 1rem;
    border-radius: .5rem;
-   padding: -11rem 3rem;
+   padding: -1rem 3rem;
+   font-size: 1.7rem;
+   /* text-transform: capitalize; */
+   color:var(--white);
+   cursor: pointer;
+   text-align: center;
+}
+
+.option-btn-1 {
+   display: block;
+   width: 100%;
+   margin-top: 1rem;
+   border-radius: .5rem;
+   padding: 1rem 3rem;
    font-size: 1.7rem;
    /* text-transform: capitalize; */
    color:var(--white);
@@ -99,7 +112,7 @@ section{
    background-color: var(--main-color);
 }
 
-.option-btn{
+.option-btn, .option-btn-1{
    background-color: var(--orange);
 }
 

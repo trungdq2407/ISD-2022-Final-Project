@@ -1,6 +1,6 @@
 <?php
 
-include 'components/connect.php';
+include './components/connect.php';
 
 session_start();
 
@@ -21,7 +21,7 @@ if(isset($_SESSION['user_id'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Vua Táo - Điện thoại, Phụ kiện chính hãng</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
@@ -35,7 +35,7 @@ if(isset($_SESSION['user_id'])){
 
 <body>
 
-    <?php include 'components/user_header.php'; ?>
+    <?php include './components/user_header.php'; ?>
 
     <div class="home-bg">
 
@@ -140,7 +140,7 @@ if(isset($_SESSION['user_id'])){
 
 
 
-    <?php include 'components/footer.php'; ?>
+    <?php include './components/footer.php'; ?>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 

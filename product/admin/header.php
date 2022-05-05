@@ -43,7 +43,7 @@
         session_start();
         include '../connect_db.php';
         include '../function.php';
-        include '../../Manage Account/config.php';
+        include '../../components/connect.php';
          $user_id = $_SESSION['user_id'];
                                         
         if (isset($_GET['logout'])) {
