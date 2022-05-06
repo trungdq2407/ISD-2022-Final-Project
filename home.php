@@ -52,7 +52,7 @@ if(isset($_SESSION['user_id'])){
                         <div class="content">
                             <span>Giảm đến 50%</span>
                             <h3>Oppo Reno 7</h3>
-                            <a href="shop.php" class="btn">Mua ngay</a>
+                            <a href="#" class="btn">Mua ngay</a>
                         </div>
                     </div>
 
@@ -63,7 +63,7 @@ if(isset($_SESSION['user_id'])){
                         <div class="content">
                             <span>Giảm đến 50%</span>
                             <h3>Đồng hồ G-Shock</h3>
-                            <a href="shop.php" class="btn">Mua ngay</a>
+                            <a href="#" class="btn">Mua ngay</a>
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@ if(isset($_SESSION['user_id'])){
                         <div class="content">
                             <span>Giảm đến 50%<< /span>
                                     <h3>Tai nghe Sony chính hãng</h3>
-                                    <a href="shop.php" class="btn">Mua ngay</a>
+                                    <a href="#" class="btn">Mua ngay</a>
                         </div>
                     </div>
 
@@ -115,7 +115,7 @@ if(isset($_SESSION['user_id'])){
                         <input type="number" name="qty" class="qty" min="1" max="99"
                             onkeypress="if(this.value.length == 2) return false;" value="1">
                     </div>
-                    <input type="submit" value="add to cart" class="btn" name="add_to_cart">
+                    <input type="submit" value="Thêm vào giỏ hàng" class="btn" name="add_to_cart">
                 </form>
                 <?php
       }
