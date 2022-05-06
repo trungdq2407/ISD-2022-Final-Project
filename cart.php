@@ -29,7 +29,7 @@ if(isset($_POST['update_qty'])){
    $qty = filter_var($qty, FILTER_SANITIZE_STRING);
    $update_qty = $conn->prepare("UPDATE `cart` SET quantity = ? WHERE id = ?");
    $update_qty->execute([$qty, $cart_id]);
-   $message[] = 'cart quantity updated';
+   $message[] = 'Giỏ hàng được cập nhật';
 }
 
 ?>
@@ -77,7 +77,7 @@ if(isset($_POST['update_qty'])){
          <button type="submit" class="fas fa-edit" name="update_qty"></button>
       </div>
       <div class="sub-total"> Tổng cộng: <span><?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?> VND</span> </div>
-      <input type="submit" value="delete item" onclick="return confirm('delete this from cart?');" class="delete-btn" name="delete">
+      <input type="submit" value="Xóa sản phẩm" onclick="return confirm('Bạn muốn xóa sản phẩm khỏi giỏ hàng?');" class="delete-btn" name="delete">
    </form>
    <?php
    $grand_total += $sub_total;
@@ -89,8 +89,8 @@ if(isset($_POST['update_qty'])){
    </div>
 
    <div class="cart-total">
-      <p>Tổng cộng : <span>$<?= $grand_total; ?></span></p>
-      <a href="shop.php" class="option-btn">Tiếp tục mua sắm</a>
+      <p>Tổng cộng : <span><?= $grand_total; ?> VND</span></p>
+      <a href="home.php" class="option-btn-1">Tiếp tục mua sắm</a>
       <a href="cart.php?delete_all" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" onclick="return confirm('Bạn muốn xóa hết sản phẩm trong giỏ hàng chứ?');">Xóa các sản phầm</a>
       <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">Thanh toán</a>
    </div>

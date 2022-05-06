@@ -15,7 +15,7 @@
       <div class="box">
          <h3>Thông tin</h3>
          <a href="user_login.php"> <i class="fas fa-angle-right"></i> Về chúng tôi</a>
-         <a href="user_register.php"> <i class="fas fa-angle-right"></i> Tuyển dụng/a>
+         <a href="user_register.php"> <i class="fas fa-angle-right"></i> Tuyển dụng</a>
          <a href="cart.php"> <i class="fas fa-angle-right"></i> Liên hệ</a>
          <a href="orders.php"> <i class="fas fa-angle-right"></i> Dịch vụ sửa chữa và bảo hành</a>
       </div>
